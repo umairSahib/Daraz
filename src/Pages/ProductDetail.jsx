@@ -6,7 +6,9 @@ const ProductDetail = () => {
   console.log("o", detail);
   return (
     <>
-      <h1>product detail</h1>
+      <div>
+        <img src={detail.image} alt="logo" />
+      </div>
     </>
   );
 };
