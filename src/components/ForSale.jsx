@@ -1,7 +1,11 @@
-import React from "react";
-import Product from "../Product";
+import React, { useState } from "react";
+import { Product } from "../Product";
+import { useDispatch, useSelector } from "react-redux";
+import { handleProduct } from "../Feature/ProductSlice";
 
 const ForSale = () => {
+  const dispatch = useDispatch();
+  const detail = useSelector((state) => state.product.productDetail);
   return (
     <>
       <div className="ml-12 pt-10">
@@ -28,7 +32,10 @@ const ForSale = () => {
                 className="w-full h-40 object-cover"
               />
               <div className="p-3 space-y-2">
-                <h2 className="font-semibold text-sm line-clamp-2">
+                <h2
+                  onClick={() => dispatch(handleProduct(obj))}
+                  className="font-semibold text-sm line-clamp-2"
+                >
                   {obj.name}
                 </h2>
                 <h2 className="text-[#F85606] text-lg font-bold">
