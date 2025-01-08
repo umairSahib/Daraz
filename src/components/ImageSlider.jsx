@@ -34,7 +34,7 @@ const ImageSlider = () => {
       className="relative w-full max-w-3xl mx-auto"
       data-testid="image-slider"
     >
-      <div className="relative h-64 overflow-hidden rounded-lg md:h-96">
+      <div className="relative h-64 overflow-hidden rounded-lg md:h-96 z-10">
         {images.map((image, index) => (
           <div
             key={index}

@@ -3,7 +3,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <>
-      <div className="flex items-center justify-between w-full px-4 py-8 sticky top-0 bg-[#F85606] ">
+      <div className="flex items-center justify-between w-full px-4 py-8 sticky top-0 bg-[#F85606] z-50">
         <div className="flex-shrink-0">
           <img
             src="https://lzd-img-global.slatic.net/us/domino/3b870cb043c7f8a9741cbf66329e294e.png"
@@ -15,15 +15,11 @@ const Navbar = () => {
         <div className="flex-1 mx-4">
           <form>
             <div className="flex">
-              <label
-                htmlFor="search-dropdown"
-                className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-              ></label>
               <div className="relative w-full">
                 <input
                   type="search"
                   id="search-dropdown"
-                  className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-e-lg rounded-s-gray-100 rounded-s-2 border border-gray-300 "
+                  className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-e-lg border border-gray-300"
                   placeholder="Search"
                   required
                 />
@@ -51,20 +47,14 @@ const Navbar = () => {
             </div>
           </form>
         </div>
-        <div>
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                className="focus:outline-none text-white bg-[#F85606] hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5  "
-              >
-                Sign In
-              </button>
-            </div>
-            <div>
-              <i className="fa-solid fa-cart-shopping text-lg text-white"></i>
-            </div>
-          </div>
+        <div className="flex items-center space-x-4">
+          <button
+            type="button"
+            className="text-white bg-[#F85606] hover:bg-green-800 font-medium rounded-lg text-sm px-5 py-2.5"
+          >
+            Sign In
+          </button>
+          <i className="fa-solid fa-cart-shopping text-lg text-white"></i>
         </div>
       </div>
     </>
