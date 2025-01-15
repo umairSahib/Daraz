@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ForSale from "./components/ForSale";
 import Categories from "./components/Categories";
@@ -11,10 +16,14 @@ function App() {
   return (
     <>
       <Router>
+        {/* Navbar should be rendered for all routes */}
         <Navbar />
+
         <Routes>
+          <Route path="/" element={<Navigate to="/products" />} />
           <Route
-            path="/Daraz"
+            path="/products"
+            index
             element={
               <div className="bg-[#F5F5F5]">
                 <ImageSlider />
@@ -25,8 +34,7 @@ function App() {
               </div>
             }
           />
-
-          <Route path="product" element={<ProductDetail />} />
+          <Route path="/products/:productId" element={<ProductDetail />} />
         </Routes>
       </Router>
     </>

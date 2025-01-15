@@ -1,20 +1,19 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { increment, decrement } from "../Feature/ProductSlice";
 
 export default function ProductDetail() {
   const detail = useSelector((state) => state.product.productDetail);
-
+  const quantity = useSelector((state) => state.product.quantity);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/Daraz");
+    navigate("/products");
   };
   return (
-    <div
-      onClick={handleClick}
-      className="container mx-auto px-4 py-8 cursor-pointer"
-    >
-      <i className="fa-solid fa-arrow-left"></i>
+    <div className="container mx-auto px-4 py-8 cursor-pointer">
+      <i onClick={handleClick} className="fa-solid fa-arrow-left"></i>
       <div className="flex flex-col md:flex-row gap-8">
         <div className="md:w-1/2">
           <div className="p-4">
@@ -64,9 +63,20 @@ export default function ProductDetail() {
             <div className="flex items-center gap-4">
               <span className="font-semibold">Quantity</span>
               <div className="flex items-center gap-2 border rounded-md">
-                <button className="px-2 py-1 text-lg">-</button>
-                <span className="w-12 text-center">1</span>
-                <button className="px-2 py-1 text-lg">+</button>
+                <button
+                  onClick={() => dispatch(decrement())}
+                  className="px-2 py-1 text-lg"
+                >
+                  -
+                </button>
+                <span className="w-12 text-center">{quantity}</span>
+                <button
+                  onClick={() => dispatch(increment())}
+                  type="button"
+                  className="px-2 py-1 text-lg"
+                >
+                  +
+                </button>
               </div>
             </div>
           </div>

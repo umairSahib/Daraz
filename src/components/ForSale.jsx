@@ -2,12 +2,13 @@ import React from "react";
 import { Product } from "../Product";
 import { useDispatch, useSelector } from "react-redux";
 import { handleProduct } from "../Feature/ProductSlice";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const ForSale = () => {
   const dispatch = useDispatch();
   const detail = useSelector((state) => state.product.productDetail);
-
+  const location = useLocation();
+  console.log("first", location);
   return (
     <>
       <div className="ml-12 pt-10">
@@ -34,7 +35,7 @@ const ForSale = () => {
                 className="w-full h-40 object-cover"
               />
               <div className="p-3 space-y-2">
-                <Link to="/product">
+                <Link to={`/products/${obj.id}`}>
                   <h2
                     onClick={() => dispatch(handleProduct(obj))}
                     className="font-semibold text-sm line-clamp-2"
