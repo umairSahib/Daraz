@@ -1,10 +1,20 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductDetail() {
   const detail = useSelector((state) => state.product.productDetail);
+
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/Daraz");
+  };
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div
+      onClick={handleClick}
+      className="container mx-auto px-4 py-8 cursor-pointer"
+    >
+      <i className="fa-solid fa-arrow-left"></i>
       <div className="flex flex-col md:flex-row gap-8">
         <div className="md:w-1/2">
           <div className="p-4">
@@ -34,7 +44,9 @@ export default function ProductDetail() {
           </div>
 
           <div>
-            <p className="text-3xl font-bold text-orange-500">Rs. 133</p>
+            <p className="text-3xl font-bold text-orange-500">
+              Rs{detail.price}
+            </p>
             <p className="text-sm text-muted-foreground">
               <span className="line-through">Rs. 140</span>{" "}
               <span className="text-orange-500">-5%</span>

@@ -11,10 +11,8 @@ function App() {
   return (
     <>
       <Router>
-        {/* Navbar should be rendered for all routes */}
         <Navbar />
         <Routes>
-          {/* Route for the main path */}
           <Route
             path="/Daraz"
             element={
@@ -27,7 +25,7 @@ function App() {
               </div>
             }
           />
-          {/* Route for the product details page */}
+
           <Route path="product" element={<ProductDetail />} />
         </Routes>
       </Router>

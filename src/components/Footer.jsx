@@ -115,11 +115,11 @@ const Footer = () => {
               </div>
               <a
                 href="#"
-                className="inline-block w-[140px] hover:opacity-90 transition-opacity"
+                className="inline-block w-[140px]  hover:opacity-90 transition-opacity"
               >
                 <img
-                  src="https://img.utdstc.com/icon/56e/8ea/56e8eae8cf725c5ea30cef9f1030ce3ddf5ccc6ca6cc8e6d5a75c61ced2850f5:200"
-                  alt="Explore it on AppGallery"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-eukjl4BDUbk7jZLxQPG5SSi6iwVJ20.png"
+                  alt="Get it on Huawei AppGallery"
                   className="w-full h-auto"
                 />
               </a>
