@@ -1,5 +1,6 @@
 import React from "react";
 import Category from "../Category";
+import { Link } from "react-router-dom";
 
 const Categories = () => {
   return (
@@ -12,7 +13,9 @@ const Categories = () => {
           {Category.map((obj, index) => (
             <div key={index}>
               <div className="border border-gray-200 px-2 py-2 w-40 h-40 shadow-md hover:shadow-xl transition-all">
-                <img src={obj.image} alt="categories" />
+                <Link to={`/category/${obj.id}`}>
+                  <img src={obj.image} alt="categories" />
+                </Link>
               </div>
             </div>
           ))}
