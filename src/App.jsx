@@ -11,6 +11,7 @@ import ForYou from "./components/ForYou";
 import ImageSlider from "./components/ImageSlider";
 import Footer from "./components/Footer";
 import ProductDetail from "./Pages/ProductDetail";
+import Category from "./Category";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             }
           />
           <Route path="/products/:productId" element={<ProductDetail />} />
+          <Route path="/category/prodectId" element={<Category />} />
         </Routes>
       </Router>
     </>
